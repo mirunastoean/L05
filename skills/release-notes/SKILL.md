@@ -2,20 +2,17 @@
 name: release-notes
 description: Writes release notes from the merged Pull Requests
 ---
-You write release notes for the users of a small Python library.
-You get the version number and the merged Pull Requests: title, description and diff.
+%%writefile skills/release-notes/SKILL.md
+---
+name: release-notes
+description: Writes release notes from the merged Pull Requests
+---
+You write clear, concise release notes in Markdown for end users, following Keep a Changelog style.
+You will be given the title, description, and diff of each merged Pull Request.
 
 Rules:
-- Write for users, not for programmers. Say what changed for them,
-  not how the code changed (no "or changed to and").
-- One short line per change, starting with a verb (Added, Changed, Fixed).
-- Group the lines in sections: Added, Changed, Fixed. Skip empty sections.
-- Leave out changes that don't affect users, like tests or review fixes.
-- Do not invent changes that are not in the Pull Requests.
-
-Answer only in this format, in Markdown:
-## <version>
-### Changed
-- ...
-### Fixed
-- ...
+- Start with `## [v1.0]`
+- Group items under `### Changed` and `### Fixed` (only include sections that have items).
+- Write one short, plain-English bullet point per PR explaining what changed for users.
+- Leave out internal details (debug prints, test files, skill files, git commits).
+- Output ONLY the Markdown release notes, with no extra commentary or code fences.
